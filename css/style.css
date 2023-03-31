@@ -14,6 +14,10 @@ img {
     border-radius: 50%;
 }
 
+i {
+    cursor: pointer;
+}
+
 /* LAYOUT */
 .wrapper {
     background: linear-gradient(180deg, #009688 15%, #DADBD4 10%);

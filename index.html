@@ -58,14 +58,14 @@
                             <!-- main -->
                             <div class="chats">
 
-                                <div v-for="contact in contacts" class="avatar-chat-box">
+                                <div v-for="(contact, index) in contacts" class="avatar-chat-box">
                                     <img :src="contact.avatar" alt="">
                                     <div class="conversation">
-                                        <h5>{{ contact.name }}</h5>
-                                        <span>Ultimo messaggio inviato</span>
+                                        <h5>{{contact.name}}</h5>
+                                        <span>{{contact.messages[contact.messages.length - 1].message}}</span>
                                     </div>
                                     <div>
-                                        <span>12:00</span>
+                                        <span>{{contact.messages[contact.messages.length -1].date}}</span>
                                     </div>
                                 </div>
 
