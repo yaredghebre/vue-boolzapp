@@ -48,15 +48,18 @@
                                     <a href="">Attiva notifiche desktop</a>
                                 </div>
                             </div>
+                            
                             <!-- search-bar -->
                             <div class="search-chat">
                                 <i class="fa-solid fa-magnifying-glass " style="color: #7b808a;"></i>
                                 <input class="search-bar" type="text" placeholder="Cerca o inizia una nuova chat">
                             </div>
+
                             <!-- main -->
                             <div class="chats">
+
                                 <div v-for="contact in contacts" class="avatar-chat-box">
-                                    <img src="img/avatar_1.jpg" alt="">
+                                    <img :src="contact.avatar" alt="">
                                     <div class="conversation">
                                         <h5>{{ contact.name }}</h5>
                                         <span>Ultimo messaggio inviato</span>
@@ -65,8 +68,6 @@
                                         <span>12:00</span>
                                     </div>
                                 </div>
-
-                                <div class="avatar-chat-box"></div>
 
                             </div>
                         </div>
