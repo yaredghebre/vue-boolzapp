@@ -1,4 +1,181 @@
-body {
-    background: linear-gradient(180deg, #009688 10%, #DADBD4 10%);
-    height: 100vh;
+/* RESET */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+/* LAYOUT */
+.wrapper {
+    background: linear-gradient(180deg, #009688 15%, #DADBD4 10%);
+    height: 100vh;
+    padding: 20px 0;
+}
+
+/* UTILITIES */
+.d-flex {
+    display: flex;
+}
+
+/* MAIN */
+.main-container {
+    height: 90%;
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+    z-index: 100;
+    position: fixed;
+    left: 10%; 
+}
+
+.main-row {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.main-col-left {
+    width: 40%;
+    height: 100%;
+    background-color: white;
+}
+
+.main-col-right {
+    width: 60%;
+    height: 100%;
+    background-color: white;
+}
+
+.mcl-icons,
+.mcr-icons {
+    padding: 20px 0;
+}
+
+.mcl-header,
+.mcr-header {
+    height: 10%;
+    width: 100%;
+    background-color: rgba(211, 211, 211, 0.391);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mcl-icons i,
+.mcr-icons i {
+    margin-left: 10px;
+}
+
+/* LEFT COLUMN */
+/* Header */
+.mcl-header {
+    border-right: 1px solid grey;
+}
+
+.mcl-avatar {
+    display: flex;
+    line-height: 70px;
+    font-size: .9rem;
+}
+
+/* Body */
+.mcl-body {
+    height: calc(100% - 10%);
+    width: 100%;
+}
+
+/* banner */
+.notifications {
+    height: 10%;
+    width: 100%;
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 20px;
+}
+
+.notifications h5 {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.notifications a {
+    font-size: .8rem;
+    color: rgba(0, 0, 0, 0.653);
+}
+
+.bell-circle {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* search-bar */
+.search-chat {
+    height: 5%;
+    width: 100%;
+    background-color: rgba(211, 211, 211, 0.172);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 15px;
+}
+
+.search-bar {
+    height: 100%;
+    width: 100%;
+    border-radius: 2px;
+    padding: 10px;
+    border: 0 transparent;
+}
+
+/* main */
+.chats {
+    height: calc(100% - 15%);
+    width: 100%;
+    padding: 0 30px;
+    overflow-y: scroll;
+}
+
+/* RIGHT COLUMN */
+.mcr-body {
+    height: calc(100% - 18%);
+    background-image: url(/img/mine.jpg);
+    padding: 30px;
+    overflow-y: scroll;
+}
+
+.mcr-footer {
+    height: 8%;
+    width: 100%;
+    background-color: rgba(211, 211, 211, 0.391);
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.msg-box {
+    flex-grow: 1;
+    height: 100%;
+    border-radius: 5px;
+    border: 1px transparent;
+    padding: 20px;
+}
+
+

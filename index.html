@@ -6,12 +6,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Custom Style -->
     <link rel="stylesheet" href="css/style.css" />
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- VueJS -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <title>Boolzap</title>
+    <title>BoolzApp</title>
 </head>
 <body>
     <div id="app">
+        <div class="wrapper">
+            <div class="main-container">
+                <!-- MAIN GRID -->
+                <div class="main-row">
+
+                    <!-- LEFT COLUMN -->
+                    <section class="main-col-left">
+
+                        <!-- Header -->
+                        <div class="mcl-header">
+                            <div class="mcl-avatar">
+                                <img src="img/avatar_io.jpg" alt="">
+                                <span>Sofia</span>
+                            </div>
+                            <div class="mcl-icons">
+                                <i class="fa-solid fa-rotate-right fa-xl" style="color: #7b808a;"></i>
+                                <i class="fa-solid fa-message fa-xl" style="color: #7b808a;"></i>
+                                <i class="fa-solid fa-ellipsis-vertical fa-xl" style="color: #7b808a;"></i>
+                            </div>
+                        </div>
+
+                        <!-- Body -->
+                        <div class="mcl-body">
+                            
+                            <!-- banner -->
+                            <div class="notifications">
+                                <div class="bell-circle">
+                                    <i class="fa-solid fa-bell-slash fa-lg" style="color: #42b6f0;"></i>
+                                </div>
+                                <div>
+                                    <h5>Ricevi notifiche di nuovi messaggi</h5>
+                                    <a href="">Attiva notifiche desktop</a>
+                                </div>
+                            </div>
+                            <!-- search-bar -->
+                            <div class="search-chat">
+                                <i class="fa-solid fa-magnifying-glass " style="color: #7b808a;"></i>
+                                <input class="search-bar" type="text" placeholder="Cerca o inizia una nuova chat">
+                            </div>
+                            <!-- main -->
+                            <div class="chats">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis vitae molestiae delectus doloremque quibusdam voluptatibus et, deleniti ratione atque non iure repellat. Cupiditate sed, illo temporibus vitae quos amet impedit!</p>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <!-- RIGHT COLUMN -->
+                    <section class="main-col-right">
+
+                        <!-- Header -->
+                        <div class="mcr-header">
+                            <img src="img/avatar_io.jpg" alt="">
+                            <div class="mcr-icons">
+                                <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #7b808a;"></i>
+                                <i class="fa-solid fa-message fa-xl" style="color: #7b808a;"></i>
+                                <i class="fa-solid fa-paperclip fa-xl" style="color: #7b808a;"></i>
+                            </div>
+                        </div>
+
+                        <!-- Body -->
+                        <div class="mcr-body">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi, voluptas repudiandae neque corrupti tempora! Veritatis placeat, accusamus in dicta consequuntur perferendis. Qui nesciunt repellat, ut voluptate animi quasi aliquid.</p>
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="mcr-footer">
+                            <div class="mcr-f-icons">
+                                <i class="fa-regular fa-face-smile fa-xl" style="color: #7b808a;"></i>
+                            </div>
+                            <input class="msg-box" type="text" placeholder="Scrivi un messaggio">
+                            <i class="fa-solid fa-microphone fa-xl" style="color: #7b808a;"></i>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
 
     </div>
     <script src="js/script.js"></script>

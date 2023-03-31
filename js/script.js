@@ -1,15 +1,6 @@
-// Descrizione:
-// Rifare l'esercizio della to do list.
-// Questa volta però ogni todo sarà un oggetto, formato da due proprietà:
-// - text, una stringa che indica il testo del todo
-// - done, un booleano (true/false) che indica se il todo è stato fatto oppure no
-
-// MILESTONE 1
-// Stampare all'interno di una lista, un item per ogni todo.
-// Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.
-
-// MILESTONE 2
-// Predisporre un campo di input testuale e un pulsante "aggiungi": cliccando sul pulsante, il testo digitato viene letto e utilizzato per creare un nuovo todo, che quindi viene aggiunto alla lista dei todo esistenti.
+// Il compito è di svolgere la milestone 1:
+// Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse
+// Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto.
 
 const {createApp} = Vue;
 createApp({
