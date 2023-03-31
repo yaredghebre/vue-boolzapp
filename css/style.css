@@ -74,8 +74,10 @@ img {
 .mcr-icons i {
     margin-left: 10px;
 }
-
+/* //////////////// */
 /* LEFT COLUMN */
+/* //////////////// */
+
 /* Header */
 .mcl-header {
     border-right: 1px solid grey;
@@ -97,7 +99,7 @@ img {
 .notifications {
     height: 10%;
     width: 100%;
-    background-color: lightblue;
+    background-color: rgba(142,218,252,255);
     display: flex;
     align-items: center;
     gap: 20px;
@@ -151,14 +153,54 @@ img {
     overflow-y: scroll;
 }
 
+/* //////////////// */
 /* RIGHT COLUMN */
+/* //////////////// */
+
+/* Body */
 .mcr-body {
     height: calc(100% - 18%);
     background-image: url(/img/mine.jpg);
     padding: 30px;
     overflow-y: scroll;
+    position: relative;
 }
 
+/* static version */
+.user-msg {
+    border-radius: 10px;
+    background-color: rgba(213,249,186,255);
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    top: 50px;
+    right: 50px;
+    padding: 15px;
+    /* debug */
+    width: 35%;
+}
+
+.host-msg {
+    border-radius: 10px;
+    background-color: white;
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    top: 150px;
+    left: 50px;
+    padding: 15px;
+    /* debug */
+    width: 35%;
+}
+
+.mcr-body span {
+    font-size: .7rem;
+    margin-top: 10%;
+}
+
+/* Footer */
 .mcr-footer {
     height: 8%;
     width: 100%;
