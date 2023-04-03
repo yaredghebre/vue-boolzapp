@@ -43,7 +43,7 @@ createApp({
                             date: '20/03/2020 16:30:00',
                             message: 'Ciao come stai?',
                             status: 'sent'
-                            
+
                         },
                         {
                             date: '20/03/2020 16:30:55',
@@ -182,11 +182,6 @@ createApp({
         activeChat(index) {
             console.log(index);
             this.chatShown = index;
-        },
-        showBox() {
-            if(this.message !== "") {
-                this.showBox = true;
-            }
         },
  
         sendMessage() {
