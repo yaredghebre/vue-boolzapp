@@ -108,7 +108,7 @@
                                 <i class="fa-regular fa-face-smile fa-xl" style="color: #7b808a;"></i>
                             </div>
                             <label></label>
-                            <input class="msg-box" v-model="newMessage" type="text" placeholder="Scrivi un messaggio">
+                            <input class="msg-box" v-model="newMessage" @keyup.enter ="sendMessage" type="text" placeholder="Scrivi un messaggio" onfocus="this.value=''">
                             <i class="fa-sharp fa-solid fa-paper-plane fa-xl" style="color: #7b808a;" @click="sendMessage"></i>
                             <i class="fa-solid fa-microphone fa-xl" style="color: #7b808a;"></i>
                         </div>
@@ -119,6 +119,7 @@
 
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

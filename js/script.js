@@ -4,13 +4,13 @@
 
 const {createApp} = Vue;
 
+const dt = luxon.DateTime;
+
 createApp({
     data() {
         return {
             chatShown: 0,
-            messages:[],
             newMessage: "",
-            showBox: true,
             contacts: [
                 {
                     name: 'Michele',
@@ -31,7 +31,7 @@ createApp({
                             date: '10/01/2020 16:15:22',
                             message: 'Tutto fatto!',
                             status: 'received'
-                        }
+                        },
                     ],
                 },
                 {
@@ -182,17 +182,31 @@ createApp({
         activeChat(index) {
             console.log(index);
             this.chatShown = index;
+        }, 
+
+        sendMessage(){
+            if(this.newMessage !== "") {
+                const now = luxon.DateTime.now().toLocaleString(luxon.DateTime.DATETIME_SHORT_WITH_SECONDS);
+                const message = {
+                    date: now,
+                    message: this.newMessage,
+                    status: "sent",
+                };
+                setTimeout(() => {
+                    this.contacts[this.chatShown].messages.push({
+                        date: now,
+                        message: "Ciao, va bene!",
+                        status: "received"
+                    });
+        
+                },1000);
+                
+                this.contacts[this.chatShown].messages.push(message);
+                this.message.push(message);
+                this.newMessage = "";
+            }
         },
- 
-        sendMessage() {
-            console.log((this.newMessage));
-            const message = {
-                id:this.messageId++,
-                text: this.newMessage
-            };
-            this.messages.push(message)
-        }
-   
+
     }
 }).mount("#app");
     

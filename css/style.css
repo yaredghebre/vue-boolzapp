@@ -14,8 +14,9 @@ img {
     border-radius: 50%;
 }
 
-i {
+i:hover {
     cursor: pointer;
+    scale: 1.1;
 }
 
 /* LAYOUT */
