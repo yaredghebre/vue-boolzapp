@@ -229,12 +229,12 @@ i {
     margin-bottom: 15px;
 }
 
-.messages-row.sent-msg {
+.messages-row.sent {
     justify-content: flex-end;  
     gap: 10px; 
 }
 
-.messages-row.received-msg {
+.messages-row.received {
     justify-content: flex-start;
     gap: 10px;
 }
@@ -242,17 +242,19 @@ i {
     border-radius: 10px;
     padding: 15px;
     min-width: 30%;
-    max-width: 50%;
+    width: 40%;
     display: flex;
     justify-content: space-between;
 }
 
-.sent-msg .message {
+.sent .message {
     background-color: rgba(213,249,186,255);
+    align-self: flex-end;
 }
 
-.received-msg .message {
+.received .message {
     background-color: white;
+    align-self: flex-start;
 }
 
 .mcr-body span {

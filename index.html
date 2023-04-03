@@ -58,7 +58,7 @@
                             <!-- main -->
                             <div class="chats">
 
-                                <div v-for="(contact, index) in contacts" class="avatar-chat-box" @click="activeChat(contact, index)">
+                                <div v-for="(contact, index) in contacts" class="avatar-chat-box" @click="activeChat(index)">
                                     <img :src="`img/avatar${contact.avatar}.jpg`" >
                                     <div class="conversation">
                                         <h5>{{contact.name}}</h5>
@@ -79,10 +79,10 @@
 
                         <!-- Header -->
                         <div class="mcr-header">
-                            <img if="chatShown !== null" src="`img/avatar${chatShown.avatar}.jpg`">
+                            <img  :src="`img/avatar${contacts[chatShown].avatar}.jpg`">
                             <div class="mcr-avatar-status">
-                                <h5 v-if="chatShown !== null">{{chatShown.name}}</h5>
-                                <span v-if="chatShown !== null">Ultimo accesso il: {{chatShown.messages[chatShown.messages.length -1].date}}</span>
+                                <h5>{{contacts[chatShown].name}}</h5>
+                                <span>Ultimo accesso il: {{contacts[chatShown].messages[contacts[chatShown].messages.length - 1].date}}</span>
                             </div>
                             <div class="mcr-icons">
                                 <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #7b808a;"></i>
@@ -93,25 +93,13 @@
 
                         <!-- Body -->
                         <div class="mcr-body">
-                            <!-- static version -->
-                            <div class="messages-row sent-msg">
+                            <div v-for="message in contacts[chatShown].messages" class="messages-row" :class="message.status">
                                 <div class="message">
-                                    <p v-if="chatShown !== null">{{chatShown.messages[chatShown.messages.length - 3].message}}</p>
-                                    <span>15:29</span>
-                                </div>
-                                <div class="message">
-                                    <p v-if="chatShown !== null">{{chatShown.messages[chatShown.messages.length - 2].message}}</p>
-                                    <span>15:30</span>
+                                    <p>{{message.message}}</p>
+                                    <span>{{message.date}}</span>
                                 </div>
                             </div>
-
-                            <div class="messages-row received-msg">
-                                <div class="message">
-                                    <p v-if="chatShown !== null">{{chatShown.messages[chatShown.messages.length -1].message}}</p>
-                                    <span>15:31</span>
-                                </div>
-                            </div>
-
+                           
                         </div>
 
                         <!-- Footer -->
@@ -119,7 +107,9 @@
                             <div class="mcr-f-icons">
                                 <i class="fa-regular fa-face-smile fa-xl" style="color: #7b808a;"></i>
                             </div>
-                            <input class="msg-box" type="text" placeholder="Scrivi un messaggio">
+                            <label></label>
+                            <input class="msg-box" v-model="newMessage" type="text" placeholder="Scrivi un messaggio">
+                            <i class="fa-sharp fa-solid fa-paper-plane fa-xl" style="color: #7b808a;" @click="sendMessage"></i>
                             <i class="fa-solid fa-microphone fa-xl" style="color: #7b808a;"></i>
                         </div>
                     </section>

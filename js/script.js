@@ -7,7 +7,10 @@ const {createApp} = Vue;
 createApp({
     data() {
         return {
-            chatShown: null,
+            chatShown: 0,
+            messages:[],
+            newMessage: "",
+            showBox: true,
             contacts: [
                 {
                     name: 'Michele',
@@ -40,6 +43,7 @@ createApp({
                             date: '20/03/2020 16:30:00',
                             message: 'Ciao come stai?',
                             status: 'sent'
+                            
                         },
                         {
                             date: '20/03/2020 16:30:55',
@@ -175,11 +179,25 @@ createApp({
         }
     },
     methods: {
-        activeChat(contact, index) {
-            console.log(contact, index);
-            this.chatShown = contact;
-
+        activeChat(index) {
+            console.log(index);
+            this.chatShown = index;
+        },
+        showBox() {
+            if(this.message !== "") {
+                this.showBox = true;
+            }
+        },
+ 
+        sendMessage() {
+            console.log((this.newMessage));
+            const message = {
+                id:this.messageId++,
+                text: this.newMessage
+            };
+            this.messages.push(message)
         }
+   
     }
 }).mount("#app");
     
