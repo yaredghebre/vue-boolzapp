@@ -7,10 +7,11 @@ const {createApp} = Vue;
 createApp({
     data() {
         return {
+            chatShown: null,
             contacts: [
                 {
                     name: 'Michele',
-                    avatar: 'img/avatar_1.jpg',
+                    avatar: '_1',
                     visible: true,
                     messages: [
                         {
@@ -32,7 +33,7 @@ createApp({
                 },
                 {
                     name: 'Fabio',
-                    avatar: 'img/avatar_2.jpg',
+                    avatar: '_2',
                     visible: true,
                     messages: [
                         {
@@ -54,7 +55,7 @@ createApp({
                 },
                 {
                     name: 'Samuele',
-                    avatar: 'img/avatar_3.jpg',
+                    avatar: '_3',
                     visible: true,
                     messages: [
                         {
@@ -76,7 +77,7 @@ createApp({
                 },
                 {
                     name: 'Alessandro B.',
-                    avatar: 'img/avatar_4.jpg',
+                    avatar: '_4',
                     visible: true,
                     messages: [
                         {
@@ -93,7 +94,7 @@ createApp({
                 },
                 {
                     name: 'Alessandro L.',
-                    avatar: 'img/avatar_5.jpg',
+                    avatar: '_5',
                     visible: true,
                     messages: [
                         {
@@ -110,7 +111,7 @@ createApp({
                 },
                 {
                     name: 'Claudia',
-                    avatar: 'img/avatar_6.jpg',
+                    avatar: '_6',
                     visible: true,
                     messages: [
                         {
@@ -132,7 +133,7 @@ createApp({
                 },
                 {
                     name: 'Federico',
-                    avatar: 'img/avatar_7.jpg',
+                    avatar: '_7',
                     visible: true,
                     messages: [
                         {
@@ -149,7 +150,7 @@ createApp({
                 },
                 {
                     name: 'Davide',
-                    avatar: 'img/avatar_8.jpg',
+                    avatar: '_8',
                     visible: true,
                     messages: [
                         {
@@ -171,6 +172,13 @@ createApp({
                 }
             ]
         
+        }
+    },
+    methods: {
+        activeChat(contact, index) {
+            console.log(contact, index);
+            this.chatShown = contact;
+
         }
     }
 }).mount("#app");

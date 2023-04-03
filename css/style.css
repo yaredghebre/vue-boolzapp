@@ -55,6 +55,7 @@ i {
     width: 35%;
     height: 100%;
     background-color: white;
+    border-right: 1px solid grey;
 }
 
 .main-col-right {
@@ -87,13 +88,9 @@ i {
 /* //////////////// */
 
 /* Header */
-.mcl-header {
-    border-right: 1px solid grey;
-}
-
 .mcl-avatar {
     display: flex;
-    line-height: 70px;
+    line-height: 90px;
     font-size: .9rem;
 }
 
@@ -176,6 +173,11 @@ i {
     flex-grow: 1;
 }
 
+.avatar-chat-box:hover {
+    background-color: rgba(128, 128, 128, 0.324);
+    cursor: pointer;
+}
+
 .avatar-chat-box h5 {
     font-size: 1rem;
     font-weight: 500;
@@ -189,6 +191,27 @@ i {
 /* //////////////// */
 /* RIGHT COLUMN */
 /* //////////////// */
+/* Header */
+.mcr-header {
+    display: flex;
+    font-size: .9rem;
+}
+
+.mcr-avatar-status {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mcr-avatar-status h5 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.mcr-avatar-status span {
+    color: grey;
+}
 
 /* Body */
 .mcr-body {
@@ -200,32 +223,36 @@ i {
 }
 
 /* static version */
-.user-msg {
-    border-radius: 10px;
-    background-color: rgba(213,249,186,255);
-    position: absolute;
+.messages-row {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    top: 50px;
-    right: 50px;
-    padding: 15px;
-    /* debug */
-    width: 35%;
+    flex-direction: column;
+    margin-bottom: 15px;
 }
 
-.host-msg {
+.messages-row.sent-msg {
+    justify-content: flex-end;  
+    gap: 10px; 
+}
+
+.messages-row.received-msg {
+    justify-content: flex-start;
+    gap: 10px;
+}
+.message {
     border-radius: 10px;
-    background-color: white;
-    position: absolute;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    top: 150px;
-    left: 50px;
     padding: 15px;
-    /* debug */
-    width: 35%;
+    min-width: 30%;
+    max-width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sent-msg .message {
+    background-color: rgba(213,249,186,255);
+}
+
+.received-msg .message {
+    background-color: white;
 }
 
 .mcr-body span {
