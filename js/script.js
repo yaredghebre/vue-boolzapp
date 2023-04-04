@@ -11,6 +11,8 @@ createApp({
         return {
             chatShown: 0,
             newMessage: "",
+            isChevronVisible: false,
+            isMenuOpen: false,
             contacts: [
                 {
                     name: 'Michele',
@@ -175,15 +177,15 @@ createApp({
                     ],
                 }
             ]
-        
         }
     },
+    
     methods: {
         activeChat(index) {
             console.log(index);
             this.chatShown = index;
         }, 
-
+        
         sendMessage(){
             if(this.newMessage !== "") {
                 const now = luxon.DateTime.now().toLocaleString(luxon.DateTime.DATETIME_SHORT_WITH_SECONDS);
@@ -200,13 +202,36 @@ createApp({
                     });
         
                 },1000);
-                
+
                 this.contacts[this.chatShown].messages.push(message);
-                this.message.push(message);
                 this.newMessage = "";
             }
         },
+        getDateTime(dateStr) {
+            const myDate = dt.fromFormat("10/01/2020 15:30:55", "dd/MM/yyyy hh:mm:ss")
+            return myDate.toLocaleString(dt.TIME_24_SIMPLE);
+        },
+        // MOSTRA CHEVRON
+        showChevron() {
+            this.isChevronVisible = true;
+        },
 
+        hideChevron() {
+            this.isChevronVisible = false;
+        },
+
+        // MENU MESSAGGIO
+        openMenu() {
+            this.isMenuOpen = !this.isMenuOpen;
+        },
+
+        deleteMessage() {
+            this.openMenu();
+        },
+
+        showInfo() {
+            this.openMenu();
+        }
     }
 }).mount("#app");
     
