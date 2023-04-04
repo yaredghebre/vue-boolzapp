@@ -12,7 +12,7 @@ createApp({
             chatShown: 0,
             newMessage: "",
             isChevronVisible: false,
-            isMenuOpen: false,
+            MenuOpenActive: null,
             contacts: [
                 {
                     name: 'Michele',
@@ -184,6 +184,7 @@ createApp({
         activeChat(index) {
             console.log(index);
             this.chatShown = index;
+            this.MenuOpenActive = null;
         }, 
         
         sendMessage(){
@@ -221,16 +222,23 @@ createApp({
         },
 
         // MENU MESSAGGIO
-        openMenu() {
-            this.isMenuOpen = !this.isMenuOpen;
+        openMenu(index) {
+            // this.MenuOpenActive = index;
+            if(this.MenuOpenActive === index) {
+                this.MenuOpenActive = null;
+            } else {
+                this.MenuOpenActive = index;
+            }
         },
 
-        deleteMessage() {
+        deleteMessage(index) {
             this.openMenu();
+            this.contacts[this.chatShown].messages.splice(index);
         },
 
         showInfo() {
             this.openMenu();
+            alert("Data e ora di invio del messaggio:");
         }
     }
 }).mount("#app");

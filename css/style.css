@@ -272,19 +272,21 @@ a {
 
 .msg-menu {
     position: absolute;
-    padding: 10px;
-    top: 70px;
+    padding: 10px 5px;
+    top: 40px;
     right: 10px;
     width: 150px;
-    height: 150px;
-    background-color: lightcoral;
-    /* cursor: pointer; */
+    z-index: 100;
+    background-color: rgba(211, 211, 211);
+    border-radius: 5px;
 }
 
 .menu-option {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+}
+
+.menu-option span {
     cursor: pointer;
 }
 
@@ -299,7 +301,7 @@ a {
 }
 
 .mcr-body span {
-    font-size: .7rem;
+    font-size: 1rem;
     margin-top: 10%;
 }
 
