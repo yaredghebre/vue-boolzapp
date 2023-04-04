@@ -13,6 +13,7 @@ createApp({
             newMessage: "",
             isChevronVisible: false,
             MenuOpenActive: null,
+            searchName: "",
             contacts: [
                 {
                     name: 'Michele',
@@ -179,6 +180,18 @@ createApp({
             ]
         }
     },
+    // RICERCA CHAT DEI CONTATTI
+    computed: {
+        searchContacts() {
+            if (this.searchName === "") {
+                return this.contacts;
+            } else {
+                return this.contacts.filter((contact) => {
+                    return contact.name.toLowerCase().includes(this.searchName.toLowerCase());
+                });
+            }
+        }
+    },
     
     methods: {
         activeChat(index) {
@@ -186,7 +199,7 @@ createApp({
             this.chatShown = index;
             this.MenuOpenActive = null;
         }, 
-        
+        // INVIO MESSAGGIO CON RISPOSTA
         sendMessage(){
             if(this.newMessage !== "") {
                 const now = luxon.DateTime.now().toLocaleString(luxon.DateTime.DATETIME_SHORT_WITH_SECONDS);
@@ -208,10 +221,13 @@ createApp({
                 this.newMessage = "";
             }
         },
+
+        // FUNZIONE PER ORE E MINUTI NEL MESSAGGIO
         getDateTime(dateStr) {
             const myDate = dt.fromFormat("10/01/2020 15:30:55", "dd/MM/yyyy hh:mm:ss")
             return myDate.toLocaleString(dt.TIME_24_SIMPLE);
         },
+        
         // MOSTRA CHEVRON
         showChevron() {
             this.isChevronVisible = true;
@@ -221,9 +237,8 @@ createApp({
             this.isChevronVisible = false;
         },
 
-        // MENU MESSAGGIO
+        // MENU MESSAGGIO 
         openMenu(index) {
-            // this.MenuOpenActive = index;
             if(this.MenuOpenActive === index) {
                 this.MenuOpenActive = null;
             } else {
@@ -231,14 +246,16 @@ createApp({
             }
         },
 
+        // CANCELLA MESSAGGIO
         deleteMessage(index) {
-            this.openMenu();
-            this.contacts[this.chatShown].messages.splice(index);
+            this.contacts[this.chatShown].messages.splice(index, 1);
+            this.MenuOpenActive = null;
         },
 
+        // MOSTRA INFO MESSAGGIO
         showInfo() {
-            this.openMenu();
             alert("Data e ora di invio del messaggio:");
+            this.MenuOpenActive = null;
         }
     }
 }).mount("#app");
