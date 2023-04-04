@@ -272,10 +272,9 @@ a {
 
 .msg-menu {
     position: absolute;
-    padding: 10px 5px;
+    padding: 20px;
     top: 40px;
     right: 10px;
-    width: 150px;
     z-index: 100;
     background-color: rgba(211, 211, 211);
     border-radius: 5px;

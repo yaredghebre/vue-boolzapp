@@ -35,7 +35,7 @@
                             </div>
                         </div>
 
-                        <!-- Body -->
+                        <!-- Left column Body -->
                         <div class="mcl-body">
                             
                             <!-- banner -->
@@ -52,13 +52,13 @@
                             <!-- search-bar -->
                             <div class="search-chat">
                                 <i class="fa-solid fa-magnifying-glass " style="color: #7b808a;"></i>
-                                <input class="search-bar" type="text" placeholder="Cerca o inizia una nuova chat"  >
+                                <input class="search-bar" type="text" placeholder="Cerca o inizia una nuova chat"  v-model="searchName">
                             </div>
 
                             <!-- main -->
                             <div class="chats">
 
-                                <div v-for="(contact, index) in contacts" class="avatar-chat-box" @click="activeChat(index)" >
+                                <div v-for="(contact, index) in searchContacts" class="avatar-chat-box" @click="activeChat(index)" >
                                     <img :src="`img/avatar${contact.avatar}.jpg`" >    
                                     <div class="conversation">
                                         <h5>{{contact.name}}</h5>
@@ -91,7 +91,7 @@
                             </div>
                         </div>
 
-                        <!-- Body -->
+                        <!-- Right column Body -->
                         <div class="mcr-body">
                             <div v-for="(message, index) in contacts[chatShown].messages" class="messages-row" :class="message.status">
                                 <div class="message" @mouseenter="showChevron" @mouseleave="hideChevron">
@@ -126,7 +126,10 @@
 
 
     </div>
+    <!-- LUXON -->
     <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
+
+    <!-- JS SCRIPT -->
     <script src="js/script.js"></script>
 </body>
 </html>

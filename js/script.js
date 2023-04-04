@@ -248,7 +248,7 @@ createApp({
 
         // CANCELLA MESSAGGIO
         deleteMessage(index) {
-            this.contacts[this.chatShown].messages.splice(index, 1);
+            this.contacts[this.chatShown].messages.splice(index);
             this.MenuOpenActive = null;
         },
 
