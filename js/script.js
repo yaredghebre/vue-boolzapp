@@ -11,7 +11,7 @@ createApp({
         return {
             chatShown: 0,
             newMessage: "",
-            isChevronVisible: false,
+            chevronHover: false,
             MenuOpenActive: null,
             searchName: "",
             contacts: [
@@ -229,12 +229,12 @@ createApp({
         },
         
         // MOSTRA CHEVRON
-        showChevron() {
-            this.isChevronVisible = true;
+        showChevron(message) {
+            message.chevronHover = true;
         },
 
-        hideChevron() {
-            this.isChevronVisible = false;
+        hideChevron(message) {
+            message.chevronHover = false;
         },
 
         // MENU MESSAGGIO 
@@ -248,13 +248,15 @@ createApp({
 
         // CANCELLA MESSAGGIO
         deleteMessage(index) {
-            this.contacts[this.chatShown].messages.splice(index);
+            this.contacts[this.chatShown].messages.splice(index, 1);
             this.MenuOpenActive = null;
         },
 
         // MOSTRA INFO MESSAGGIO
-        showInfo() {
-            alert("Data e ora di invio del messaggio:");
+        showInfo(index) {
+            const currDateTime = this.contacts[this.chatShown].messages[index].date;
+            console.log(currDateTime);
+            alert(`Data e ora di invio del messaggio: ${currDateTime}`);
             this.MenuOpenActive = null;
         }
     }

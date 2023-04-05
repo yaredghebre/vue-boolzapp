@@ -285,8 +285,10 @@ a {
     flex-direction: column;
 }
 
-.menu-option span {
+.menu-option span:hover {
     cursor: pointer;
+    color: rgba(0, 0, 0, 0.642);
+    scale: 1.05;
 }
 
 .sent .message {

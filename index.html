@@ -94,9 +94,9 @@
                         <!-- Right column Body -->
                         <div class="mcr-body">
                             <div v-for="(message, index) in contacts[chatShown].messages" class="messages-row" :class="message.status">
-                                <div class="message" @mouseenter="showChevron" @mouseleave="hideChevron">
+                                <div class="message" @mouseenter="showChevron(message)" @mouseleave="hideChevron(message)">
                                     <p>{{message.message}}</p>
-                                    <i class="fa fa-chevron-down msg-chevron" v-show="isChevronVisible" @click="openMenu(index)"></i>
+                                    <i class="fa fa-chevron-down msg-chevron" v-show="message.chevronHover" @click="openMenu(index)"></i>
                                     <div class="msg-menu" v-show="MenuOpenActive === index">
                                         <div class="menu-option">
                                             <span @click="deleteMessage(index)">Elimina messaggio</span>
